@@ -793,6 +793,7 @@ body::-webkit-scrollbar-thumb {
     top: 548px;
     left: 8px;
     display: grid;
+    font-size: 16px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 54px;
     grid-template-rows: 56px;
@@ -853,14 +854,14 @@ body::-webkit-scrollbar-thumb {
     font-family: 'IBM Plex Mono', monospace;
     display: flex;
     font-size: 20px;
-    margin-top: -30px;
+    margin-top: -35px;
 }
 
 .blue__section {
     font-family: 'IBM Plex Mono', monospace;
     display: flex;
     font-size: 20px;
-    margin-top: -30px;
+    margin-top: -35px;
 }
 
 .rgb__info {
@@ -977,14 +978,14 @@ body::-webkit-scrollbar-thumb {
     font-family: 'IBM Plex Mono', monospace;
     display: flex;
     font-size: 20px;
-    margin-top: -27px;
+    margin-top: -32px;
 }
 
 .blue__section__hsl {
     font-family: 'IBM Plex Mono', monospace;
     display: flex;
     font-size: 20px;
-    margin-top: -28px;
+    margin-top: -32px;
 }
 
 
