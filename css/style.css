@@ -572,6 +572,7 @@ body::-webkit-scrollbar-thumb {
 .input__position__rgb {
     width: 70px;
     height: 23px;
+    font-size: 20px;
     text-align: center;
     background: #252525;
     border: none;
