@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/adaptive.css">
+    <title>ColorStorage</title>
+</head>
+<body>
+    
+    <div class="chips__color__notification"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo__section">
+                <h1 class="header__logo">ColorStorage</h1>
+                <div class="logo__navigation">
+                    <ul class="nav">
+                        <li><a href="/">Picker</a></li>
+                        <li><a href="src/layOutPage/design.html">Design</a></li>
+                        <li><a href="src/Author/author.html">Author</a></li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+
+        <div class="article">
+
+            <!-- PickerForm -->
+            <div class="color__picker__form"> 
+            <div class="buttons_section">
+                <div class="color__buttons">
+                    <div class="color__buttons__position">
+                        <button type="button" class="btn__colors btn__red"></button>
+                        <button type="button" class="btn__colors btn__green"></button>
+                        <button type="button" class="btn__colors btn__dark__blue"></button>
+                        <button type="button" class="btn__colors btn__violet"></button>
+                        <button type="button" class="btn__colors btn__dark__pink"></button>
+                        <button type="button" class="btn__colors btn__yellow"></button>
+                        <button type="button" class="btn__colors btn__orange"></button>
+                        <button type="button" class="btn__colors btn__lilac"></button>
+                        <button type="button" class="btn__colors btn__white"></button>
+                        <button type="button" class="btn__colors btn__black"></button>            
+                    </div>
+                </div>
+
+                <div class="type__picker__buttons">
+                    <button type="button" class="btn__picker hsl__picker">Hsl</button>
+                    <button type="button" class="btn__picker hex__picker">Hex</button>  
+                </div>
+            </div>
+
+                <!-- ColorPicker Hue -->
+                <div class="color__picker__hue__main">
+                    <div class="color__picker__hue">
+                        <div class="picker__cursor__hue"></div>
+                        <div class="picker__hue"></div>
+                        <div class="canvas__container">
+                            <canvas id="color__canvas__hue" class="color__box__hue" height="350" width="300"></canvas>
+                            <canvas id="hue__canvas" class="color__spectrum" height="350" width="29"></canvas>
+                        </div>
+                    </div>  
+                    <div class="index__color__hue">
+                        <div class="indexHue rgb__indexHue"></div>
+                        <div class="indexHue hsl__indexHue"></div>
+                        <div class="indexHue hex__indexHue"></div>
+                    </div>
+                </div>
+                
+                <!-- ColorPicker Main  -->
+                <div class="color__picker__main">
+                    <div class="color__picker">
+                        <div class="picker__cursor"></div>
+                        <canvas id="color__canvas" class="color__box" height="350" width="350"></canvas>
+                    </div>
+                    <div class="index__color">
+                        <div class="index rgb__index"></div>
+                        <div class="index hsl__index"></div>
+                        <div class="index hex__index"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ColorSaveSection -->
+            <div class="color__save__section">
+                <div class="color__save__form">
+                    <div class="color__save__main">
+                        <div class="color__block"></div>
+                        <p class="text__save">Save your color... </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ColorResult -->
+            <div class="color__result__form">
+                <div class="color__result"></div>
+                
+                <!-- SaveSection -->
+                <div class="btn__save__section">
+                    <button type="button" class="btn__save btn__delete__all">Delete All</button>
+                    <button type="button" class="btn__save btn__clear">Clear Search</button>
+                    <button type="button" class="btn__save btn__save__main">Save Color</button>
+                </div>
+
+                <!-- Text under Search -->
+                <div class="text__section">
+                    <span class="subtitle__search">Use the Color Picker to find the required color!</span>
+                    
+                    <div class="line__section">
+                        <div class="underline__sub uderline__subtitle__one"></div>
+                        <div class="underline__sub uderline__subtitle__two"></div>
+                        <div class="underline__sub uderline__subtitle__three"></div>
+                    </div>
+                </div>
+
+
+                <!-- ColorSearchSectionRGB -->
+                <div class="color__search__rgb">
+                    <div class="input__rgb__section">
+                        <p class="name__type">Rgb</p>
+                        <input id="rgb__r" class="input__rgb input__position__rgb" value="255" type="number" min="0" max="255" placeholder="255"></input>
+                        <input id="rgb__g" class="input__rgb input__position__rgb" value="255" type="number" min="0" max="255" placeholder="255"></input>
+                        <input id="rgb__b" class="input__rgb input__position__rgb" value="255" type="number" min="0" max="255" placeholder="255"></input>
+                    </div>
+                    <div class="rgb__buttons__position">
+                        <button class="type__color__rgb">Rgb</button>
+                        <button class="search__btn__rgb">Find</button>                                
+                    </div>
+                </div> 
+
+                <!-- ColorSearchSectionHEX -->
+                <div class="color__search__hex">
+                    <div class="input__hex__section">
+                        <p class="name__type">Hex</p>
+                        <input id="hex__input__index" class="input__hex input__position__hex" value="#ffffff" type="text" minlength="0" maxlength="7" placeholder="#ffffff"></input>                      
+                    </div>
+                    <div class="hex__buttons__position">
+                        <button class="type__color__hex">Hex</button>
+                        <button class="search__btn__hex">Find</button>                        
+                    </div>
+                </div>
+
+                <!-- ColorSearchSectionHSL -->
+                <div class="color__search__hsl">
+                    <div class="input__hsl__section">
+                        <p class="name__type">Hsl</p>
+                        <input id="hsl__h" class="input__hsl input__position__hsl" value="0" type="number" min="0" max="360" placeholder="0"></input>
+                        <input id="hsl__s" class="input__hsl input__position__hsl" value="0" type="number" min="0" max="100" placeholder="100"></input>
+                        <input id="hsl__l" class="input__hsl input__position__hsl" value="100" type="number" min="0" max="100" placeholder="100"></input>
+                    </div>
+                    <div class="hsl__buttons__position">
+                        <button class="type__color__hsl">Hsl</button>
+                        <button class="search__btn__hsl">Find</button>
+                    </div>
+                </div>  
+            </div>
+
+
+            <!-- Color model help -->
+
+            <div class="color__model__help__section">
+                <h2 class="name__model__help">Color model help</h2>
+
+                <div class="rgb__model__section">
+                    <p class="rgb__info">Основная цель цветовой модели RGB заключается в восприятии, 
+                        представлении и отображении изображений в электронных системах, 
+                        таких как телевизоры и компьютеры, хотя она также использовалась в обычной фотографии. 
+                        До эпохи электроники за цветовой моделью RGB уже стояла солидная теория, основанная на человеческом восприятии цветов.
+                    </p>
+
+                    <div class="rgb__index__section">
+                        <div class="red__section">
+                            <p class="tag__name red__rgb">.h1
+                                <p class="bracket">{</p>
+                                <p class="tag__color rgb__red__main">color</p>
+                                <p class="main__index">rgb</p> 
+                                <p class="color__index__main">255, 0, 0</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Красный */</p>
+                            </p>
+                        </div>
+                        
+                        <div class="green__section">
+                            <p class="tag__name green__rgb">.h2
+                                <p class="bracket">{</p>
+                                <p class="tag__color rgb__green__main">color</p>
+                                <p class="main__index">rgb</p> 
+                                <p class="color__index__main">0, 255, 0</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Зелёный */</p>
+                            </p>
+                        </div>
+
+                        <div class="blue__section">
+                            <p class="tag__name blue__rgb">.h3
+                                <p class="bracket">{</p>
+                                <p class="tag__color rgb__blue__main">color</p>
+                                <p class="main__index">rgb</p> 
+                                <p class="color__index__main">0, 0, 255</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Синий */</p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model__line__one"></div>
+
+                <div class="hsl__model__section">
+                    <p class="hsl__info">Представление HSL моделирует способ смешивания различных красок для создания цвета в реальном мире, 
+                        с измерением светлоты, напоминающим различное количество черной или белой краски в смеси (например, для создания «светло-красного» красный пигмент можно смешать с белая краска; 
+                        эта белая краска соответствует высокому значению «светлости» в представлении HSL). 
+                    </p>
+
+                    <div class="hsl__index__section">
+                        <div class="red__section__hsl">
+                            <p class="tag__name red__hsl">.h1
+                                <p class="bracket">{</p>
+                                <p class="tag__color hsl__red__main">color</p>
+                                <p class="main__index">hsl</p> 
+                                <p class="color__index__main">0, 100%, 50%</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket__hsl">}</p>
+                                <p class="comment">/* Красный */</p>
+                            </p>
+                        </div>
+                        
+                        <div class="green__section__hsl">
+                            <p class="tag__name green__hsl">.h2
+                                <p class="bracket">{</p>
+                                <p class="tag__color hsl__green__main">color</p>
+                                <p class="main__index">hsl</p> 
+                                <p class="color__index__main">120, 100%, 50%</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Зелёный */</p>
+                            </p>
+                        </div>
+
+                        <div class="blue__section__hsl">
+                            <p class="tag__name blue__hsl">.h3
+                                <p class="bracket">{</p>
+                                <p class="tag__color hsl__blue__main">color</p>
+                                <p class="main__index">hsl</p> 
+                                <p class="color__index__main">240, 100%, 50%</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Синий */</p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model__line__two"></div>
+                
+                <div class="hex__model__section">
+                    <p class="hex__info">Веб-цвета - это цвета, используемые для отображения веб-страниц во всемирной паутине, 
+                        а также методы описания и определения этих цветов. 
+                        Цвета могут быть указаны в виде триплета RGB или в шестнадцатеричном формате (шестнадцатеричный триплет) или в некоторых случаях в соответствии с их общепринятыми английскими названиями. 
+                        Цветовой инструмент или другое графическое программное обеспечение часто используется для создания значений цвета. В некоторых случаях шестнадцатеричные коды цветов указываются с использованием начального знака числа (#).
+                    </p>
+
+                    <div class="hex__index__section">
+                        <div class="red__section__hex">
+                            <p class="tag__name red__hex">.h1
+                                <p class="bracket">{</p>
+                                <p class="tag__color hex__red__main">color</p>
+                                <p class="main__index">#FF0000</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Красный */</p>
+                            </p>
+                        </div>
+                        
+                        <div class="green__section__hex">
+                            <p class="tag__name green__hex">.h2
+                                <p class="bracket">{</p>
+                                <p class="tag__color hex__green__main">color</p>
+                                <p class="main__index">#00FF00</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Зелёный */</p>
+                            </p>
+                        </div>
+
+                        <div class="blue__section__hex">
+                            <p class="tag__name blue__hex">.h3
+                                <p class="bracket">{</p>
+                                <p class="tag__color hex__blue__main">color</p>
+                                <p class="main__index">#0000FF</p> 
+                                <p class="semicolon">;</p>
+                                <p class="bracket">}</p>
+                                <p class="comment">/* Синий */</p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+       </div> 
+    </div>
+
+    
+    <script src="app.js"></script>
+</body>
+</html>
