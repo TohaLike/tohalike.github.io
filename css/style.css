@@ -841,7 +841,7 @@ body::-webkit-scrollbar-thumb {
 
 .rgb__model__section {
     width: 1326px;
-    height: 185px;
+    height: 195px;
     background: #252525;
     border-radius: 5px;
     margin-top: -33px;
@@ -933,7 +933,7 @@ body::-webkit-scrollbar-thumb {
     width: 1270px;
     height: 2px;
     left: 48px;
-    top: 1008px;
+    top: 1022px;
     background: #000000;
     border-radius: 5px;
 }
@@ -942,7 +942,7 @@ body::-webkit-scrollbar-thumb {
 /* Hsl section */
 .hsl__model__section {
     width: 1326px;
-    height: 231px;
+    height: 235px;
     background: #252525;
     border-radius: 5px;
     margin-top: 42px;
@@ -1000,7 +1000,7 @@ body::-webkit-scrollbar-thumb {
     width: 1270px;
     height: 2px;
     left: 48px;
-    top: 1281px;
+    top: 1299px;
     background: #000000;
     border-radius: 5px;
 }
